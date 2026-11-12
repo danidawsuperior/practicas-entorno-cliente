@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <script>
+        function pulsar(dato){
+            var objetoPantalla = document.getElementsByClassName("pantalla")[0];
+
+            switch(dato){
+                case 'C':
+                    objetoPantalla.value = ' ';
+                    break;
+                case '=' :
+                    var resultado = eval(objetoPantalla.value);
+                    objetoPantalla.value = resultado;
+                    break;
+                
+                default :
+                    objetoPantalla.value += dato;
+                    break;
+            }
+        }
+    </script>
+    
+</head>
+
+<body>
+    <h1>Calculadora Basica</h1>
+    <table>
+        <tr>
+            <td colspan="4">
+                <input type="button" value="C" id="C" onclick="pulsar(this.value)">
+                <input type="text" id="pantalla" class="pantalla"></tr>
+            </td>
+        <tr>
+            <td><input type="button" value="7" class="num" onclick="pulsar(this.value)"></td>
+            <td><input type="button" value="8" class="num" onclick="pulsar(this.value)"></td>
+            <td><input type="button" value="9" class="num" onclick="pulsar(this.value)"></td>
+            <td><input type="button" value="+" class="operador" onclick="pulsar(this.value)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" class="num" onclick="pulsar(this.value)"></td>
+            <td><input type="button" value="5" class="num" onclick="pulsar(this.value)"></td>
+            <td><input type="button" value="6" class="num" onclick="pulsar(this.value)"></td>
+            <td><input type="button" value="-" class="operador" onclick="pulsar(this.value)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" class="num" onclick="pulsar(this.value)"></td>
+            <td><input type="button" value="2" class="num" onclick="pulsar(this.value)"></td>
+            <td><input type="button" value="3" class="num" onclick="pulsar(this.value)"></td>
+            <td><input type="button" value="/" class="operador" onclick="pulsar(this.value)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="0" class="num" onclick="pulsar(this.value)"></td>
+            <td><input type="button" value="." class="decimal" onclick="pulsar(this.value)"></td>
+            <td><input type="button" value="=" class="resultado" onclick="pulsar(this.value)"></td>
+            <td><input type="button" value="*" class="operador" onclick="pulsar(this.value)"></td>
+        </tr>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucle While</title>
+    
+</head>
+<body>
+    <!--Hacer Usuario con cuadro de texto, y 
+    Contraseña con cuadro de texto, hasta que no se pulse validar no se ejecuta-->
+    <h1>Formulario</h1>
+    <label for="">Usuario: </label><input type="text" name="usuario" autofocus><br><br>
+    <label for="">Clave: </label><input type="text" name="clave" ><br><br>
+    <input type="button" value="VALIDAR" onclick="validar()"><br><br>
+    <script>
+        let user = document.getElementsByTagName("input")[0];
+        console.log(typeof(user));
+        let clave = document.getElementsByTagName("input")[1];
+        console.log(typeof(clave));
+        function validar (){
+            let valor=user.value;
+            let contraseña=clave.value;
+            console.log(valor);
+            console.log(contraseña);
+            while(valor == "" || valor == undefined || valor == null || contraseña == ""
+                || contraseña == undefined || contraseña == null){
+               console.log("Por favor rellene los campos");
+               break;
+               
+            };
+            
+            console.log("Bienvenido " + valor + " su contraseña es " + contraseña);
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador configurable</title>
+</head>
+<body>
+    <h3>CONFIGURA TU PROPIO CONTADOR</h3><br>
+    <table>
+        <tr>
+            <td><label for="">Inicio: </label><input type="text" size="6" class="rango" autofocus></td><td><label for="">Final: </label><input type="text" size="6" class="rango"></td>
+        </tr>
+        <tr>
+
+        </tr>
+        <tr>
+            <td><label for="">Paso: </label><input type="text" size="6"></td><td></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="A CONTAR" onclick="contando()"></td><td></td>
+        </tr>
+    </table><br><br>
+
+    <h3>VISUALIZACIÓN DE LA CUENTA</h3>
+    <textarea id="pantalla" rows="10" cols="20"></textarea>   
+    
+    <script>
+        function contando() {
+            var valorInicio = document.getElementsByTagName("input")[0].value;
+            var valorFinal = document.getElementsByTagName("input")[1].value;
+            var valorPaso = document.getElementsByTagName("input")[2].value;
+            var mostrar = document.getElementsByTagName("textarea")[0];
+
+            if(Number(valorInicio) < Number(valorFinal)){
+                for(let i = Number(valorInicio); i <= Number(valorFinal); i += Number(valorPaso) ){
+                    mostrar.value += "Cuenta = " + i + "\n" ;
+                }
+            } else if(Number(valorInicio) > Number(valorFinal)) {
+                for(let i = Number(valorInicio); i >= Number(valorFinal); i -= Number(valorPaso) ){
+                    mostrar.value += "Cuenta = " + i + "\n" ;
+                }
+            } else {
+                mostrar.value = "Introduzca dos números que no sean iguales";
+            }
+        }
+    </script>
+</body>
+</html>

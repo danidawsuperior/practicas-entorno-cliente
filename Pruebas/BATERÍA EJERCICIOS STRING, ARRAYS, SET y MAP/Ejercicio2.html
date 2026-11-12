@@ -1,0 +1,45 @@
+<!--
+2.- Como alternativa al cifrado César, se plantea el cifrado polialfabético.
+Para implementar este tipo de cifrado se pedirá al cliente que introduzca un texto. Este texto
+servirá para cifrar nuestro mensaje.
+Como norma respecto al texto se tiene que debe contener números y la clave se cifrará de
+forma cíclica.
+Ejemplo:
+Mensaje: Este es el mensaje.
+Clave: 12345
+Mensaje cifrado: Fuwi%fu#iq!ohrxblh
+El mensaje cifrado se forma de esta manera:
+E+1=F; s+2=u; t+3=w; e+4=i; “ “ + 5=%; e+1=f; ......
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+
+<body>
+    <script>
+        var respuesta = prompt("Introduce el mensaje");
+        var pos = prompt("Introduce la clave");
+        var mensajeEncriptado = "";
+        let indiceClave = 0;
+        for (let letra of respuesta) {
+            
+            var desplazamiento = Number(pos.charAt(indiceClave))
+            var cifra = letra.charCodeAt(letra) + desplazamiento;
+            mensajeEncriptado += String.fromCharCode(cifra);
+            indiceClave++;
+
+            if(indiceClave == pos.length){
+                indiceClave = 0;
+            }
+        }
+        alert(mensajeEncriptado);
+
+    </script>
+</body>
+
+</html>

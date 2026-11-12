@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controlando Radio-check-Select</title>
+</head>
+<body>
+    <h2>INTRODUZCA LOS DATOS</h2><br><br>
+    <label for="">Apellidos: </label><input type="text" id="ape"><br><br>
+    <label for="">DNI: </label><input type="text" id="dni"><br><br>
+    <h3>Indique su sexo</h3><br><br>
+    <input type="radio" name="sexo" value="M">Mujer</input><br><br>
+    <input type="radio" name="sexo" value="H">Hombre</input><br><br>
+    <h3>Seleccione la comunidad a la que pertenece</h3><br><br>
+    <select name="comunidades" size="1">
+        <option value="aelegir">Seleccione una comunidad</option>
+        <option value="Asturias">Asturias</option>
+        <option value="La Rioja">La Rioja</option>
+        <option value="Madrid">Madrid</option>
+        <option value="Navarra">Navarra</option>
+        <option value="Canarias">Islas Canarias</option>
+        <option value="Baleares">Islas Baleares</option>
+        <option value="Murcia">Murcia</option>
+        <option value="Cantabria">Cantabria</option>
+        <option value="Euzkadi">Euzcadi</option>
+        <option value="Galicia">Galicia</option>
+        <option value="Aragón">Aragón</option>
+    </select><br><br>
+    <h3>Seleccione los servicios que necesita</h3><br><br>
+    <input type="checkbox" name="servicios" value="Cultura">Cultura</input><br><br>
+    <input type="checkbox" name="servicios" value="Sanidad">Sanidad</input><br><br>
+    <input type="checkbox" name="servicios" value="Educación">Educación</input><br><br>
+    <input type="button" value="Registrar" onclick="capturardatos()">
+    <script>
+        let cjanombre=document.getElementById("ape");
+        let cjadni=document.getElementById("dni");
+        let btonsexo=document.getElementsByName("sexo");
+        let checkservicios=document.getElementsByName("servicios");
+        let listacomunidades=document.getElementsByName("comunidades");
+        let datos="";
+        function capturardatos(){
+            datos=cjanombre.value + "\n";
+            datos=datos + cjadni.value + "\n";
+            
+            for (let i=0; i<btonsexo.length;i++){
+                if(btonsexo[i].checked){
+                    datos=datos + btonsexo[i].value + "\n";
+                    break;
+                }
+            }
+            datos=datos + listacomunidades[0].value + "\n";
+            
+            for (let j=0; j<checkservicios.length;j++){
+                if(checkservicios[j].checked){
+                    datos=datos + checkservicios[j].value + "\n";
+                    
+                }
+            }
+            console.log(datos);
+        }
+    </script>
+
+</body>
+</html>

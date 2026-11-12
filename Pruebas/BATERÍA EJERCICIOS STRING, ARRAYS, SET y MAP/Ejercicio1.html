@@ -1,0 +1,43 @@
+<!--
+1.- Dado el siguiente array:
+
+4,0,3,4,7,3,5,8,1,8,8,0,2,3,1,2,5,7,3,2,5,1
+
+Utilizando los métodos propios del objeto Array, desarrollar el código script que permita
+obtener un array sin elementos repetidos.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+
+<body>
+    <h1>Ejercicio de arrays</h1>
+
+    <script>
+        var array = [4, 0, 3, 4, 7, 3, 5, 8, 1, 8, 8, 0, 2, 3, 1, 2, 5, 7, 3, 2, 5, 1];
+        var array2 = [];
+        var numero = 0;
+
+        document.write("Array original: [" + array + "]" +"</br>" + "</br>");
+
+        array.sort();
+        for (let i = 0; i < array.length; i++) {
+            numero = array[i];
+
+            if (array2.indexOf(numero) == -1) {
+                array2.push(numero);
+            }
+        }
+
+        document.write("Array original ordenado: [" + array + "]" +"</br>" + "</br>");
+        document.write("Array sin números repetidos: [" + array2 + "]");
+
+    </script>
+</body>
+
+</html>

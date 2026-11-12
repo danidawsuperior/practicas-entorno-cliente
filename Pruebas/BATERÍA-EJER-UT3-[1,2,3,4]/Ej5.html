@@ -1,0 +1,41 @@
+<!--
+Ejercicio 5.- Cuadrados aleatorios.
+Crear una aplicación web que muestre 2000 cuadrados de color aleatorio de 50 * 50 píxeles.
+Su posición en la pantalla será también aleatoria.
+Se deberá visualizar una pantalla similar a la siguiente imagen:
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuadrados aleatorios</title>
+    <style>
+        div {
+            position: fixed;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        const numcuadrados = 2000;
+        for (let i = 1; i <= numcuadrados; i++) {
+            let rojo = parseInt(Math.random() * 255);
+            let verde = parseInt(Math.random() * 255);
+            let azul = parseInt(Math.random() * 255);
+            let left = (Math.random() * 100) + "%";
+            let top = (Math.random() * 100) + "%";
+            document.write(
+                `<div style='background-color:` +
+                `rgb(${rojo},${verde},${azul});` +
+                `left:${left};top:${top}'></div>`
+            );
+        }
+    </script>
+</body>
+
+</html>

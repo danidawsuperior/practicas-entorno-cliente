@@ -1,0 +1,39 @@
+<!--
+Ejercicio 3.- Uso indexOf
+Desarrollar una página web en cuyo script se permita definir las siguientes variables:
+miCadena="cabrales, torta del casar, idiazabal"
+miCadenaMayusculas="Cabrales, Torta del Casar, Idiazabal"
+Se le pedirá al cliente que escriba en un inptu, o prompt, la variedad de queso que prefiere.
+Se mostrará un mensaje informando de la posición que ocupa en la cadena miCadena o
+miCadenaMayusculas, en función de cómo lo haya escrito el cliente.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <script>        
+        let tipoQueso = prompt("Que tipo de queso prefieres (Cabrales, Torta del Casar, Idiazabal)");
+        var miCadena = "cabrales, torta del casar, idiazabal";
+        var miCadenaMayusculas = "Cabrales, Torta del Casar, Idiazabal";
+        
+        var minusculas = miCadena.indexOf(tipoQueso);
+        var mayusculas = miCadenaMayusculas.indexOf(tipoQueso);
+
+        if(minusculas == -1){
+            alert("El tipo de queso solicitado no se encuentra en minúsculas");
+        } else {
+            alert("El tipo de queso solicitado se encuentra en minúsculas en la posición " + minusculas);
+        }
+        if(mayusculas == -1){
+            alert("El tipo de queso solicitado no se encuentra en mayúsculas");
+        } else{
+            alert("El tipo de queso solicitado se encuentra en mayúsculas en la posición " + mayusculas);
+        }
+        
+    </script>
+</body>
+</html>

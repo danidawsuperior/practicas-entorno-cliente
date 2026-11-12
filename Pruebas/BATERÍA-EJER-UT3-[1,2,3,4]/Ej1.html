@@ -1,0 +1,55 @@
+<!--
+Ejercicio 1.- Media de serie de números.
+Crear una aplicación web que permita introducir números a través de un input. Se introduce
+y, al hacer click sobre el botón Añadir, se deberá almacenar en un Array. También se podría
+pedir a través de un prompt.
+Se finalizará cuando el usuario introduzca el número 0.
+Al final indicará la media de los números introducidos en un input de tipo text de salida.
+Si en algún momento no es un número lo que escribe el usuario, se le pide de nuevo.
+Si al utilizar prompt, se cancela cualquier cuadro de lectura, el programa termina y se indica
+que el usuario ha cancelado y no se mostrará la media.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+
+<body>
+    <script>
+        var array = [];
+        var numero;
+        var total = 0;
+        do {
+            numero = prompt("Escribe el siguiente número(escribe 0 para terminar)");
+            if (numero != null && !isNaN(numero)) {
+                numero = Number(numero);
+
+                if (!isNaN(numero)) {
+                    if (numero != 0) {
+                        //Si tenemos un número lo añadimos al array
+                        array.push(numero);
+                    }
+                }
+            } else {
+                alert("No se ha escrito un número");
+            }
+
+        } while (numero != null && (isNaN(numero) || numero != 0));
+
+        if (numero == null) {
+            document.write("<p>El usuario canceló la operación</p>");
+        } else if (array.length > 0 && !isNaN(numero)) {
+            for (let n of array) {
+                total += n;
+            }
+            document.write(`<p>La media es ${total / array.length}</p>`)
+        }
+    </script>
+
+</body>
+
+</html>

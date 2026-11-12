@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de objeto literal e inputs</title>
+    <script>
+        var Ventas = "Toyota";
+        function TiposCarro(nombre) {
+            if (nombre == "Honda") {
+                return nombre;
+            } else {
+                return "Lo siento, nosotros no vendemos " + nombre + ".";
+            }
+        }
+        var carro = { miCarro: "Saturn", getCarro: TiposCarro("Honda"), especial: Ventas};
+
+        function leer() {
+            document.getElementById("uno").value = carro.miCarro;
+            document.getElementById("dos").value = carro.getCarro;
+            document.getElementById("tres").value = carro.especial;
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>Referencia de controles DOM</h1>
+    <label for="">Carro:</label><input type="text" id="uno" autofocus><br><br>
+    <label for="">Tipo:</label><input type="text" id="dos"><br><br>
+    <label for="">Especial:</label><input type="text" id="tres"><br><br>
+    <input type="button" value="Visualizar" onclick="leer()">
+
+</body>
+
+</html>

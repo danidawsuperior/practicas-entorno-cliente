@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TirarDado</title>
+    <script>
+        let fotos = [   "img/Dado1.jpg", "img/Dado2.jpg", 
+                        "img/Dado3.jpg", "img/Dado4.jpg", 
+                        "img/Dado5.jpg", "img/Dado6.jpg"];
+        function LanzarDado(){
+            let mostrarMensaje = document.getElementsByTagName("input")[0];
+            let minimo = 1;
+            let maximo = 6;
+            let dado = Math.round(Math.random()*(maximo - minimo)) + minimo;
+
+            document.getElementsByTagName("img")[0].src = fotos[dado - 1];
+            
+            //mostrarMensaje.value = dado;
+        }
+    </script>
+</head>
+<body>
+    <h1>Tirar Dado</h1>
+    <!--<label for="">Nº Generado: </label><input type="text" id="cuadroTexto" size="1"><br><br>-->
+    <img src="img/Dados.jpg"><br><br>
+    <input type="button" value="Lanzar" onclick="LanzarDado()">
+    
+</body>
+</html>
+

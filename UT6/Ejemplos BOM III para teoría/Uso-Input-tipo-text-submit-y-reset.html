@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso Input tipo text y password</title>
+</head>
+<body>
+    <p align="center"><b>VERIFICACIÓN DE LA CONTRASEÑA</b>
+    <center>
+        <FORM name="formulario1" id='form1' onsubmit="return validarFormulario(this)" method="POST">
+            <table bgcolor="#FFFFCC" border="2">
+                <tr><td><label for="">Escribe tu nombre: </label></td><td><INPUT size=30 name="NOMBRE"></td></tr> 
+                <tr><td><label for="">Contraseña: </label></td><td><INPUT name="clave01" type=password size="20" id="clave01"></td></tr>
+                <tr><td><label for="">Introduce de nuevo la contraseña: </label></td><td><INPUT name="clave02" type=password size="20" id="clave02"></td></tr>
+                <tr><td><INPUT type="submit" value="Enviar" name="Enviar"></td><td><INPUT type="reset" value=Restablecer></td></tr>
+            </table>
+        </FORM>
+    </center><br><br>
+    <center>
+        <table bgcolor="#FFFFCC" border="2">
+            <tr><td> 
+                <FORM name="formulario2">
+                    <label for="">Nombre del primer formulario: </label><INPUT size=30 name="NOMBRE2"> 
+                </FORM>
+            </td></tr>
+        </table>
+    </center>
+    <SCRIPT language="JAVASCRIPT"> 
+        function validarFormulario(formulario) {
+            alert(formulario);// Aquí comprobamos que el parámetro recibido es un objeto del tipo
+                      // Object HTMLFormElement
+            if (formulario.clave01.value == "") { 
+                document.formulario2.NOMBRE2.value=formulario.NOMBRE.value;
+                //no se ha introducido contraseña 
+                alert("Debes introducir la contraseña");
+                formulario.clave01.focus();
+                //devolver el foco al campo
+                return false; 
+            } 
+            if (formulario.clave01.value != formulario.clave02.value) {
+                //las contraseñas escritas no coinciden 
+                alert("Las contraseñas introducidas son distintas")
+                formulario.clave01.focus(); //devolver el foco
+                formulario.clave01.select(); //seleccionar texto
+                return false; 
+            }else{
+                alert("Claves validadas");
+            }
+            //formulario.action="http://www.servidor.es/login_servidor.cgi"
+            formulario.submit(); //enviar datos al servidor 
+            document.formulario2.NOMBRE2.value=formulario.NOMBRE.value;
+            //Se queda en blanco todo el form1 y form2.
+        } 
+    //Nota: Observar que el manejador de evento onsubmit se invoca con un “return” + la función. Esto hace que
+    //si se produce un return false, el submit no se lleva a cabo, si return es true, el submit se efectua.
+    </SCRIPT>
+
+</body>
+</html>

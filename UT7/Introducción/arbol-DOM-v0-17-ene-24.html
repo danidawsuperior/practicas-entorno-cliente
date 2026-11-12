@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obteniendo el DOM</title>
+</head>
+<body>
+    <p>
+        Pulse el botón para descubir su <strong>DOM</strong>
+    </p>
+    <br />
+    <input type="button" value="Ver DOM" onclick='var sangrado ="";textareaSalida = document.getElementById("salida");textareaSalida.value="";verDOM(document,sangrado);'> 
+    <br />
+	<textarea id='salida' rows='15' cols='15'></textarea>
+    <script>
+        var textareaSalida;
+        function verDOM(nodo, sangrado) {
+            var i;
+            textareaSalida.value += sangrado + nodo.nodeType + '-' + nodo.nodeName + '\n';
+            for ( i = 0; i < nodo.childNodes.length; i++) {
+                if (nodo.childNodes[i].childNodes.length > 0) {
+                    verDOM(nodo.childNodes[i], sangrado + ' ');
+                } else {
+                    textareaSalida.value += sangrado + ' ' + nodo.childNodes[i].nodeType + '-' + nodo.childNodes[i].nodeName + '\n';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

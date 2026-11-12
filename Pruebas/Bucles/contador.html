@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+    <script>
+        var cuenta = 10;
+       /* function decrementar() {
+            // Resta 1 y actualiza la caja en un solo paso
+            document.getElementById("numero0").value = cuenta;
+            cuenta--;
+        }
+        */
+        // Contador que al pulsar un boton decremente y aumente
+        function disminuirContador (){
+            let contador = 10;
+            let mostrarPantalla = document.getElementById("contador");
+            let numAcumulado="";
+            for(let i=contador; i>=0; i--){
+                numAcumulado += i +"\n";
+                //document.getElementById("instante").value = i;
+            }
+            mostrarPantalla.value=numAcumulado;
+        }
+    </script>
+</head>
+<body>
+    <h1>CONTADOR DECRECIENTE DE NÚMEROS</h1>
+    <input type="button" value="Decremento" onclick="disminuirContador()"><br><br>
+    <input type="text" id="instante">
+    <textarea name="pantallaContador" id="contador" cols="20" rows="12"></textarea>
+
+
+</body>
+</html>

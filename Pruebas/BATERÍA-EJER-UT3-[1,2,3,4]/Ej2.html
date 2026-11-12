@@ -1,0 +1,50 @@
+<!--
+Ejercicio 2.- Uso CharAt y random
+Desarrollar una página web que pida al cliente una frase a través de una caja de texto. Y,
+cada vez que el cliente haga clic sobre el botón “Ver”, deberá mostrar un carácter aleatorio
+en otra caja de texto correspondiente a la frase introducida.
+Por otro lado, habrá un botón que permita obtener, de manera aleatoria, el carácter de
+referencia de parada. Es decir, este carácter se utilizará para poner fin a la generación
+aleatoria a través de “Ver”.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <script>
+        var recoger;
+        var mostrar;
+        var indiceAleatorio;
+        var caracterMostrar
+        function paradaCaracter() {
+            recoger = document.getElementById("cajaTexto").value;
+            mostrar = document.getElementById("mostrarCharParada");
+            
+            indiceAleatorio = Math.floor(Math.random() * recoger.length);
+            mostrar.value = recoger.charAt(indiceAleatorio);
+        }
+
+        function Randomizar() {
+            let aleatorio = Math.floor(Math.random()*(indiceAleatorio + 1));
+            caracterMostrar = document.getElementById("mostrarCharSolucion");
+            caracterMostrar.value = recoger.charAt(aleatorio);
+            if ((caracterMostrar.value) == (mostrar.value)){
+                alert("coincidencia de caracteres");
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <h1>Ejercicio 2 Uso CharAt y Random</h1>
+    <h3>Introduce una frase</h3>
+    <input type="text" id="cajaTexto">
+    <p>Haga click para obtener el valor de parada: <input type="button" onclick="paradaCaracter()" value="Caracter de Parada"></p>
+    <p>Caracter de parada: <input type="text" id="mostrarCharParada"></p>
+    <p>Generar carácter aleatorio deentro de la frase dada: <input type="button" onclick="Randomizar()" value="Caracter Aleatorio"></p>
+    <p>Caracteres: <input type="text" id="mostrarCharSolucion"></p>
+</body>
+</html>

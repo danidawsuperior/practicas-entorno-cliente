@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de edad</title>
+    <script>
+        function comprobarEdad (){
+            if(parseInt(document.getElementsByTagName("input")[0].value) >= 18){
+                document.getElementsByName("pantalla")[0].value = "Bienvenido a nuestra app";
+            } else {
+                document.getElementsByName("pantalla")[0].value = "Lo sentimos.\nNo se puede acceder a nuestra App" ;
+            }
+
+            document.getElementsByTagName("input")[0].value = "";
+        }
+    </script>
+</head>
+<body>
+    <h1>CONTROL DE EDAD</h1>
+    <label for="">EDAD: </label><input type="text" autofocus><br><br>
+    <input type="button" value="VALIDAR" onclick="comprobarEdad()"><br><br>
+    <h2>RESULTADO</h2><br>
+    <textarea name="pantalla" rows="5" cols="50"></textarea>
+</body>
+</html>

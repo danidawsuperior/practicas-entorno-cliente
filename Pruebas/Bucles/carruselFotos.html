@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrusel Manual</title>
+    <script>
+        let cuenta = 0;
+        let fotos = ["img/Paisaje 1.jfif", "img/Paisaje 2.jfif", 
+        "img/Paisaje 3.jpg", "img/Paisaje 4.jfif", "img/Paisaje 5.jpg"];
+        function pasarFoto(){
+            cuenta ++
+            if(cuenta >= fotos.length){
+                cuenta = 0;
+            }
+            document.getElementsByTagName("img")[0].src = fotos[cuenta];
+           // mostrar = document.getElementsByTagName("img")[0];
+           // mostrar.src = fotos[cuenta];
+
+        }
+    </script>
+</head>
+<body>
+    <h2>Carrusel de fotos manual</h2>
+    <img src="img/Paisaje 1.jfif" height="500px" width="800px"><br><br>
+    <input type="button" value="PASAR IMAGEN" onclick="pasarFoto()">
+</body>
+</html>

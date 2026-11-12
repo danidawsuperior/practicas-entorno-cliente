@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 Apoyo Teoría Object Element</title>
+    <style>
+        .claseParrafo {color:red;}
+    </style>
+
+</head>
+<body>
+    <p id='parrafo'>El estilo de este párrafo está controlado por los botones.</p>		
+    <button type='button' onclick='crearClase();'>Crear clase</button>
+    <button type='button' onclick='leerClase();'>Leer clase</button>
+    <script>
+        function crearClase(){
+			document.getElementById('parrafo').setAttribute('class','claseParrafo');
+		}
+		function leerClase(){
+			if(document.getElementById('parrafo').hasAttribute('class')){
+				alert(document.getElementById('parrafo').getAttribute('class'));
+			}else{
+				alert('No tiene clase');
+			}
+		}			
+
+    </script>
+</body>
+</html>

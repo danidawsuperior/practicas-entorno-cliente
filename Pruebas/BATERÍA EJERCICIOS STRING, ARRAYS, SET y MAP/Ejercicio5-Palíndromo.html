@@ -1,0 +1,46 @@
+<!--
+Crea una aplicación web que lea un texto e indique si el mismo es un palíndromo.
+Se entiende por palíndromo a aquel texto que se puede leer igual de derecha a izquierda que
+de izquierda a derecha.
+Ejemplos:
+
+Dábale arroz a la zorra el abab
+Logré ver gol
+Luz azul
+Lo sé, Dama de Sol.
+
+Hay que tener en cuenta que, para que se consideren bien los palíndromos, se ignoran los
+signos de puntuación (espacios, interrogaciones, comas, puntos, etc..) también se ignoran
+tildes y diéresis (se considera igual el carácter “á” que el carácter “a”) y no se distingue entre
+mayúsculas y minúsculas.
+-->
+<!--
+Pedir en un alert 
+Escribe el texto sobre el que quieres comprobar si es un palíndromo, aquella frase o palabra que se lee igual 
+si se empieza por la izquiera o por la derecha (dabale arroz a la zorra el abad),(oso)...
+Pasar la frase que nos introduzcan a minusculas y quitar las tildes
+Usar: cadena.replace("","_"); esto pondría _cadena
+después de acabar este bucle hacer
+alert que muestre, resultado después de todos los cambios
+hacer una comprobación viendo si la primera letra de la izquierda es igual que la de la derecha...
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Palindromos</title>
+</head>
+
+<body>
+    <script>
+        //Constante con los caracteres que no tendremos en cuenta
+        const CAR_PUNT = ",.;: ()[]{}-_¡!¿?/\"'`´";
+        var textoIntroducido = prompt("Escribe el texto sobre el que quieres omprobar si es un palíndromo");
+
+    </script>
+</body>
+
+</html>

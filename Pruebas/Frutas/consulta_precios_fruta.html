@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tipoFrutaPrecio</title>
+    <script>
+        function tipoFrutaPrecio() {
+            let mostrarMensaje = document.getElementsByTagName("input")[0].value;
+            let mostrarPantalla = document.getElementsByTagName("textarea")[0];
+            switch (mostrarMensaje) {
+                case "Naranjas":
+                    mostrarPantalla.value = "Naranjas cuestan 0,59€ el kilo.";
+                    break;
+                case "Manzanas":
+                    mostrarPantalla.value = "Manzanas cuestan 0,32€ el kilo.";
+                    break;
+                case "Plátanos":
+                    mostrarPantalla.value = "Plátanos cuestan 0,48€ el kilo.";
+                    break;
+                case "Cerezas":
+                    mostrarPantalla.value = "Cerezas cuestan 3,00€ el kilo.";
+                    break;
+                case "Mangos":
+                    mostrarPantalla.value = "Mangos cuestan 0,56€ el kilo.";
+                    break;
+                case "Papayas":
+                    mostrarPantalla.value = "Mangos y papayas cuestan 2,79€ el kilo.";
+                    break;
+                default:
+                    mostrarPantalla.value = "Disculpa, no tenemos el tipo de fruta " + mostrarMensaje + ".";
+            }
+            console.log("¿Te gustaría tomar algo?");
+        }
+    </script>
+</head>
+
+<body>
+    <h1>SECCION DE FRUTAS</h1>
+    <h2>CONSULTA DE PRECIOS</h2>
+    <label for="">NOMBRE DE LA FRUTA: </label><input type="text" name="fruta" autofocus 
+            onchange="tipoFrutaPrecio()"><br><br>
+    <h2>PRECIO</h2><br>
+    <textarea name="pantalla" rows="5" cols="50"></textarea>
+
+</body>
+
+</html>

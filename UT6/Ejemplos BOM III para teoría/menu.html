@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu del Dia</title>
+
+<body>
+
+    <a>Menu del Dia</a>
+    <form name="opciones">
+        <p><b>Elige el primer plato: </b>
+            <select size="1" name="primer_plato">
+                <option value="" selected>Selecciona primer plato</option>
+                <option value="Garbanzos">Garbanzos</option>
+                <option value="Lentejas">Lentejas</option>
+                <option value="Judias Verdes">Judias Verdes</option>
+                <option value="Paella">Paella</option>
+
+            </select>
+        </p>
+        <p>&nbsp;<b>Elige el segundo plato: </b>
+
+            <select size="4" name="segundo_plato" multiple>
+
+                <option value="Entrecot">Entrecot a la plancha</option>
+                <option value="Pescado">Pescado a la plancha</option>
+                <option value="Cochinillo">Cochinillo frito</option>
+                <option value="Huevos" selected>Huevos con bacon y chorizo</option>
+
+            </select>
+        </p>
+        <p><b>Postre: </b>
+            <input type="radio" name="postre" value="Fruta" checked>Fruta
+            <input type="radio" name="postre" value="Helado">Helado
+            <input type="radio" name="postre" value="Yogur">Yogur
+            <input type="radio" name="postre" value="Otro">Otro<br><br>
+
+        </p>
+        <input type="button" value="Ver Menu" name="Ver" onclick="verSeleccion(this.form)">
+
+        <textarea cols="30" rows="10"></textarea>
+
+    </form>
+
+    <script>
+        function verSeleccion() {
+            let segundo="";
+            let obtitem="";
+            let primero = document.getElementsByName("primer_plato")[0].value;
+            let segundop = document.querySelector('select[name="segundo_plato"]').selectedOptions.length;
+            for(i=0;i<segundop;i++){
+                
+                segundo=segundo +document.querySelector('select[name="segundo_plato"]').selectedOptions[i].value + " y ";
+                //La siguiente opción permite quedarse con el texto que ve el cliente, que puede ser distinto del value.
+                //Ojo, en la siguiente instrucción la i parte de cero, no se correponde con lo seleccionado. 
+                console.log(document.querySelector('select[name="segundo_plato"]').item(i).text);
+            }
+            let postre = document.querySelector('input[name="postre"]:checked').value;
+
+            document.getElementsByTagName("textarea")[0].value = "Primer plato: " + primero + "\n"
+                + "Segundo plato: " + segundo + "\n" + "Postre: " + postre;
+
+        }
+    </script>
+
+</body>
+
+</html>

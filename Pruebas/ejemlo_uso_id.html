@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function leer(){
+            document.getElementById("salida").value=document.getElementById("entrada").value;
+        }
+    </script>
+</head>
+<body>
+    
+    <h1>Referencia de controles DOM</h1>
+    <input type="text" id="entrada" autofocus><br><br>
+    <input type="text" id="salida"><br><br>
+    <input type="button" value="Visualizar" onclick="leer()">
+    
+</body>
+</html>

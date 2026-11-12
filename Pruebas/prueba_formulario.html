@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function identificador(caja){
+            alert(caja.name);
+            alert(caja.value);
+            console.log(document.getElementsByName("consulta").length);
+            console.log(document.getElementsByName("consulta")[0].value);
+            console.log(document.getElementsByName("consulta")[1].value);
+            console.log(document.getElementsByName("consulta")[2].value);
+            console.log(document.getElementsByName("consulta")[3].value);
+            console.log(document.getElementsByName("edad")[0].value);
+            //console.log(document.getElementsByName("consulta")[5].value);
+
+        }
+
+        function comprobarDatos(){
+            if (document.form1.threeChar.value.length == 3){
+                //return true;
+                console.log("número de caracteres correcto")
+            } else {
+                alert("Introduce exactamente tres carateres " + document.form1.threeChar.value +" no es valido. ")
+                return false
+            }
+        }
+    </script>
+</head>
+<body>
+    <label for="">Nombre: </label><input type="text" value=0 name="consulta" autofocus onchange="identificador(this)"><br><br>
+    <label for="">Apellidos: </label><input type="text" value=1 name="consulta" onchange="identificador(this)"><br><br>
+    <label for="">DNI: </label><input type="text" value=2 name="consulta" onchange="identificador(this)"><br><br>
+    <label for="">Mail: </label><input type="text" value=3 name="consulta" onchange="identificador(this)"><br><br>
+    <label for="">Fecha Nacimiento: </label><input type="text" value=4 name="edad" onchange="identificador(this)"><br><br>
+    
+    <br><br>
+
+    <form action="" name="form1">
+        <input type="text" name="threeChar" onchange="comprobarDatos()">
+    </form>
+    
+</body>
+</html>

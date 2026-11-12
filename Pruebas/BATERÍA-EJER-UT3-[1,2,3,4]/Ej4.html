@@ -1,0 +1,32 @@
+<!--
+Ejercicio 4.- Cifrado estilo César.
+El cifrado césar consiste en tomar cada letra de un mensaje y desplazarla en el alfabeto el
+número que diga una clave. Por ejemplo, la letra A desplazada con clave 2, se convertirá en
+C.
+Aunque el cifrado César funciona con un alfabeto completo y por desplazamiento (en el
+ejemplo anterior la letra Z sería la letra B) crea una página que pida al usuario un texto y una
+clave y escriba el mismo texto pero desplazando los caracteres Unicode el número que
+indique la clave.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <script>
+        var respuesta = prompt("Introduce el texto que quieras convertir");
+        var pos = parseInt(prompt("Introduce un  número de desplazamiento"));
+        var mensajeEncriptado = " ";
+
+        for (let letra of respuesta) {
+            let cifra = letra.charCodeAt(letra) + pos;
+            mensajeEncriptado = mensajeEncriptado + String.fromCharCode(cifra);
+        }
+        alert(mensajeEncriptado);
+
+    </script>
+</body>
+</html>
