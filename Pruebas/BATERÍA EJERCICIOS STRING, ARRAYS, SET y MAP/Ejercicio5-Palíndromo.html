@@ -38,9 +38,39 @@ hacer una comprobación viendo si la primera letra de la izquierda es igual que 
     <script>
         //Constante con los caracteres que no tendremos en cuenta
         const CAR_PUNT = ",.;: ()[]{}-_¡!¿?/\"'`´";
-        var textoIntroducido = prompt("Escribe el texto sobre el que quieres omprobar si es un palíndromo");
+        var textoIntroducido = prompt("Escribe el texto sobre el que quieres comprobar si es un palíndromo");
         // convertimos en minúsculas
         textoIntroducido = textoIntroducido.toLocaleLowerCase("es");
+
+        //Compararemos la izquierda y la derecha para ver si tenemos el mismo carácter
+        let posicionIzquierda = 0;
+        let posicionDerecha = textoIntroducido.length - 1;
+        let palindromo = true; //Indica si el texto es palindromo o no
+        let textoModificado  = textoIntroducido;
+
+        //Quitamos las tildes
+        do{
+            textoIntroducido = textoModificado;
+            alert("La variable texto es " + textoIntroducido);
+            
+            textoModificado = textoModificado.replace('á','a');                
+            textoModificado = textoModificado.replace('é','e');                
+            textoModificado = textoModificado.replace('í','i');                
+            textoModificado = textoModificado.replace('ó','o');                
+            textoModificado = textoModificado.replace('ú','u');                
+            textoModificado = textoModificado.replace('ü','u');        
+            textoModificado = textoModificado.replace('à','a');        
+            textoModificado = textoModificado.replace('è','e');        
+            textoModificado = textoModificado.replace('ì','i');        
+            textoModificado = textoModificado.replace('ò','o');        
+            textoModificado = textoModificado.replace('ù','u');            
+
+            alert("La variable textoModificado antes de la condición es " + textoModificado);
+
+        } while(textoIntroducido != textoModificado);
+
+        textoIntroducido = textoModificado;
+        alert("Resultado después de todos los cambios " + textoIntroducido);
     </script>
 </body>
 
