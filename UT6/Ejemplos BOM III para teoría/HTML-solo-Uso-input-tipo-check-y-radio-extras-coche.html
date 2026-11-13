@@ -25,17 +25,22 @@
 <script>
     var periodopago=document.getElementsByName('gruporadio');
     var opcionescheck=document.getElementsByTagName('input');
-    alert(opcionescheck.length);
+    //alert(opcionescheck.length);
     var texto="";
     var Total=0;
+    var periodo = " ";
     function VerSeleccion(){
+        document.getElementsByName("pantalla")[0].values = " ";
+        texto = " ";
+        Total = 0;
         for (let i=0; i<periodopago.length;i++){
             if (periodopago[i].checked){
                 alert("Forma de pago elegida " + periodopago[i].value);
+                periodo = periodopago[i].value;
                 break
             }
         }
-        alert(opcionescheck[5].value);
+        //alert(opcionescheck[5].value);
         for (let j=5;j<8;j++){
             if (opcionescheck[j].checked){
                 texto+=opcionescheck[j].value + " ";
@@ -55,8 +60,8 @@
                 }                
             }
         }
-        
-        document.getElementsByName("pantalla")[0].value= "Los extras elegidos por " + document.getElementById("nombre").value +" son " + "\n" + texto +"\n" + "y \n" + "El total de los extras asciende a " + Total;
+
+        document.getElementsByName("pantalla")[0].value= "Los extras elegidos por " + document.getElementById("nombre").value + " " + document.getElementById("apellidos").value + "\n" +"Son: " + texto +"\n" + "La forma de pago elegida: " + periodo + "\n" + "El total de los extras asciende a: " + Total;
 
     }
 </script>
