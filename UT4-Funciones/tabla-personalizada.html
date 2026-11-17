@@ -4,9 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generar tabla personalizada</title>
+    <script>
+        let filas = document.getElementsByName('input')[0];
+        let columnas = document.getElementsByName('input')[1];
+        let color = document.getElementsByClassName('input')[2];
+    </script>
 </head>
 <body>
     <h1>Generación de tablas</h1>
-    <p>Introduce el número de filas <input type="number"></p>
+    <label for="">Introduce el número de filas <input type="number"></label><br><br>
+    <label for="">Introduce el número de columnas <input type="number"></label><br><br>
+    <label for="">Introduce el color deseado <input type="color"></label><br><br>   
+    <input type="button" value="Visualizar">
 </body>
 </html>
