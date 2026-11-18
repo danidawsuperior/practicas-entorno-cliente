@@ -1,20 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generar tabla personalizada</title>
-    <script>
-        let filas = document.getElementsByName('input')[0];
-        let columnas = document.getElementsByName('input')[1];
-        let color = document.getElementsByClassName('input')[2];
-    </script>
 </head>
+
 <body>
     <h1>Generación de tablas</h1>
-    <label for="">Introduce el número de filas <input type="number"></label><br><br>
-    <label for="">Introduce el número de columnas <input type="number"></label><br><br>
-    <label for="">Introduce el color deseado <input type="color"></label><br><br>   
-    <input type="button" value="Visualizar">
+    <label for="">Introduce el número de filas <input type="number" id="cjFilas"></label><br><br>
+    <label for="">Introduce el número de columnas <input type="number" id="cjColumnas"></label><br><br>
+    <label for="">Introduce el color deseado <input type="color" id="cjColor"></label><br><br>
+    <input type="button" value="Visualizar" onclick="dibujarTabla(document.getElementById('cjFilas').value, 
+    document.getElementById('cjColumnas').value, document.getElementById('cjColor').value)">
+
+    <script>
+        function dibujarTabla(nf, nc, color) {
+
+            if (!isNaN(nf || nc) && nf >= 0 && nc >= 0) {
+                //document.write("<table style='border-collapse:collapse;border:3px solid ${color}; width:100%;'>");
+                document.write("<table style='border${color};width:100%;'>");
+
+                for (let i = 1; i <= nf; i++) {
+                    document.write("<tr>");
+                    for (let j = 1; j <= nc; j++) {
+                        document.write(`<td style='border:1px solid ${color}'> &nbsp</td>`);
+                    }
+                    document.write("</tr>");
+                }
+                document.write("</table>");
+            } else {
+                alert("Error con los datos introducidos, no se pueden introducir valores negativos")
+            }
+        }
+
+    </script>
 </body>
+
 </html>
