@@ -14,3 +14,32 @@ unidades de 10 = 1
 unidades de 5 = 1
 unidades de 1 = 2
 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descomposición monetaria</title>
+</head>
+<body>
+    <label for="" > Introduce el número que quieres descomponer monetariamente <input type="text" id="numero" autofocus></label><br><br>
+    <input type="button" value="Mostrar" onclick="descomposicionMonetaria(document.getElementById('numero').value)">
+    <script>
+        function descomposicionMonetaria(num){
+            let num_monetarios = [500,200,100,50,20,10,5,1];
+            if(!isNaN(num) && num >= 0){
+                document.write("Número introducido --> " + num + " descomposición monetaria" + "<br><br>")
+                for (let billetes of num_monetarios) {
+                    let unidades = Math.floor(num/billetes);
+                    num = num % billetes;
+                   document.write("Unidades de " + billetes + ": " + unidades +"<br>");
+                }
+            } else{
+                alert("Tiene que ser un número mayor que cero");
+            }
+            
+        }
+
+    </script>
+</body>
+</html>
