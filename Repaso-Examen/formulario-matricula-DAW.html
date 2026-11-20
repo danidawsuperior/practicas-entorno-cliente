@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matricula DAW</title>
+</head>
+
+<body>
+    <h1>Matricula DAW</h1>
+    <form action="form-cursos"></form>
+    <table>
+        <tr>
+            <td><form action="asignaturas-curso-1">
+                <h3>PRIMER CURSO</h3>
+                <input type="checkbox" value="Sistemas Informaticos">Sistemas Informaticos <br>
+                <input type="checkbox" value="Programación">Programación <br>
+                <input type="checkbox" value="Bases de Datos">Bases de Datos <br>
+                <input type="checkbox" value="Lenguaje de Marcas">Lenguaje de Marcas <br>
+                <input type="checkbox" value="FDOS Computación en la Nube">FDOS Computación en la Nube <br>
+            </form></td>
+
+            <td><form action="asignaturas-curso-2">
+                <h3>SEGUNDO CURSO</h3>
+                <input type="checkbox" value="Entorno Cliente">Entorno Cliente <br>
+                <input type="checkbox" value="Entorno Servidor">Entorno Servidor <br>
+                <input type="checkbox" value="Despliegue de Aplicaciones Web">Despliegue de Aplicaciones Web <br>
+                <input type="checkbox" value="Diseño de Interfaces">Diseño de Interfaces <br>
+                <input type="checkbox" value="Digitalización">Digitalización <br>
+            </form></td>
+        </tr>
+    </table>
+
+    <input type="button" value="Validar" onclick="Mostrar()">
+
+    <div id="mostrar-asignaturas">
+    </div>
+
+    <script>
+        let asignaturas = document.getElementsByTagName('input');
+        let seleccionada = '';
+        let contenedor =  document.getElementById('mostrar-asignaturas');
+
+        function Mostrar(){
+            seleccionada = "";
+            for (let i = 0; i < asignaturas.length; i++) {
+                if(asignaturas[i].checked){
+                    
+                    seleccionada += asignaturas[i].value + "<br>"
+                }
+            }  
+
+            contenedor.innerHTML = "<br><b>Asignaturas seleccionadas: </b><br>"+ seleccionada + "<br>";
+            
+        }
+    </script>
+</body>
+
+</html>
