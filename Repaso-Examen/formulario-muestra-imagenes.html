@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muestra Desplegables de imagenes</title>
+</head>
+
+<body>
+    <form name="seleccion-imagenes">
+        <p>Selecciona una imagen </p>
+        <select size="1" id="IMAGENES">
+            <option value="" selected>Selecciona una imagen</option>
+            <option value="Imagen 1">Imagen 1</option>
+            <option value="Imagen 2">Imagen 2</option>
+            <option value="Imagen 3">Imagen 3</option>
+            <option value="Imagen 4">Imagen 4</option>
+            <option value="Imagen 5">Imagen 5</option>
+        </select>
+        <input type="button" value="Mostrar Imagen" onclick="mostrarIMG()">
+
+        <div id="mostrar-imagen">
+        </div>
+        <img src="" alt="">
+
+
+    </form>
+
+    <script>
+        function mostrarIMG() {
+            var imagen_seleccionada = document.getElementById("IMAGENES").value;
+            var texto = document.getElementById('mostrar-imagen');
+            var imgs = ["../Repaso-Examen/img/Paisaje 1.jfif",
+                "../Repaso-Examen/img/Paisaje 2.jfif",
+                "../Repaso-Examen/img/Paisaje 3.jpg",
+                "../Repaso-Examen/img/Paisaje 4.jfif",
+                "../Repaso-Examen/img/Paisaje 5.jpg"];
+            texto.innerHTML = "Imagen seleccionada " + imagen_seleccionada;
+            switch (imagen_seleccionada) {
+                case "Imagen 1":
+                    document.getElementsByTagName('img')[0].src = imgs[0];
+                    break;
+                case "Imagen 2":
+                    document.getElementsByTagName('img')[0].src = imgs[1];
+                    break;
+                case "Imagen 3":
+                    document.getElementsByTagName('img')[0].src = imgs[2];
+                    break;
+                case "Imagen 4":
+                    document.getElementsByTagName('img')[0].src = imgs[3];
+                    break;
+                case "Imagen 5":
+                    document.getElementsByTagName('img')[0].src = imgs[4];
+                    break;
+                default:
+                    texto.innerHTML = "Error, tiene que seleccionar alguna imagen";
+                    break;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
