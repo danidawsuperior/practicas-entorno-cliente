@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generar tabla</title>
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <td>Filas <input type="number" id="cFilas"></td>
+            <td></td>
+            <td>Columnas <input type="number" id="cColumnas"></td>
+            <td></td>
+            <td>Color <input type="color" id="TColor"></td>
+        </tr>
+    </table>
+    <input type="button" value="Generar Tabla" onclick="generarTabla(document.getElementById('cFilas').value,
+                                                                     document.getElementById('cColumnas').value,
+                                                                     document.getElementById('TColor').value)"> 
+    <input type="button" value="Borrar Tabla" onclick="borrarTabla()"> <br><br>
+    <div id="id-mostrar"></div>
+
+    <script>
+        let mostrar = document.getElementById('id-mostrar');
+        let tablaMostrar = "";
+        function generarTabla(nf,nc,co){
+            if(!isNaN(nf || nc) && nf >= 0 && nc >= 0){
+                tablaMostrar += (`<table style='border: ${co}';width=100%`);
+                for (let i = 0; i < nf; i++) {
+                    tablaMostrar += (`<tr>`)  
+                        for (let j = 0; j < nc; j++) {
+                            tablaMostrar += (`<td style='border:1px solid ${co}; padding:10px;'>    </td>`);
+                        }     
+                    tablaMostrar += (`</tr>`);         
+                }
+                tablaMostrar += (`</table>`);
+                mostrar.innerHTML = tablaMostrar;
+                tablaMostrar = "";
+
+            } else {
+                alert("Debe introducir un numero mayor que 0");
+            }
+        }
+
+        function borrarTabla(){
+            mostrar.innerHTML = "";
+        }
+
+    </script>
+
+</body>
+
+</html>
